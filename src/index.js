@@ -1,11 +1,14 @@
 
 const express = require('express')
 const { Sequelize } = require('sequelize');
-// Option 3: Passing parameters separately (other dialects)
+const sequelize = new Sequelize('postgres://root:4bzeDmV6kKwEhR4F82PxNBJqnRGWxVbA@dpg-cjnusv4dfrcc73a11gog-a.oregon-postgres.render.com/test_t932') // Example for postgres
+/*// Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize('test', 'root', '', {
     host: 'localhost',
     dialect: 'mysql'
   });
+
+  */
 const app = express()
 const port = 3000
 
