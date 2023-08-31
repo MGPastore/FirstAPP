@@ -23,6 +23,8 @@ const port = 3000
 var cors = require('cors') 
 app.use(cors())
 app.use(express.json());
+var sanitize = require("./middleware/sanitize")
+app.use(sanitize)
 
 // Modelos Sequelize
 const Form = sequelize.define('Form', {
