@@ -22,6 +22,7 @@ const port = 3000
 
 var cors = require('cors') 
 app.use(cors())
+app.use(express.json());
 
 // Modelos Sequelize
 const Form = sequelize.define('Form', {
