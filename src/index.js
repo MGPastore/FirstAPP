@@ -1,7 +1,7 @@
 
 const express = require('express')
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('postgres://root:WHqdOKVgF2ZpZyrYNZuAIiXwz3OKZfVW@dpg-cjo3s0r6fquc7389nm70-a.oregon-postgres.render.com/database_0vrz', {
+const sequelize = new Sequelize(process.env.DATABASE, {
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
