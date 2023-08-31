@@ -1,7 +1,15 @@
 
 const express = require('express')
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('postgres://root:4bzeDmV6kKwEhR4F82PxNBJqnRGWxVbA@dpg-cjnusv4dfrcc73a11gog-a.oregon-postgres.render.com/test_t932') // Example for postgres
+const sequelize = new Sequelize('postgres://root:4bzeDmV6kKwEhR4F82PxNBJqnRGWxVbA@dpg-cjnusv4dfrcc73a11gog-a.oregon-postgres.render.com/test_t932', {
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: true, // Cambiar a 'false' si estás usando una certificación autofirmada
+    },
+  },
+});
 /*// Option 3: Passing parameters separately (other dialects)
 const sequelize = new Sequelize('test', 'root', '', {
     host: 'localhost',
