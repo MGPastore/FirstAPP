@@ -20,7 +20,8 @@ const sequelize = new Sequelize('test', 'root', '', {
 const app = express()
 const port = 3000
 
-
+var cors = require('cors') 
+app.use(cors())
 
 // Modelos Sequelize
 const Form = sequelize.define('Form', {
