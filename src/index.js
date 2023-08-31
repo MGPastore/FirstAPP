@@ -1,7 +1,7 @@
 
 const express = require('express')
 const { Sequelize } = require('sequelize');
-const sequelize = new Sequelize('postgres://root:4bzeDmV6kKwEhR4F82PxNBJqnRGWxVbA@dpg-cjnusv4dfrcc73a11gog-a.oregon-postgres.render.com/test_t932', {
+const sequelize = new Sequelize('postgres://root:WHqdOKVgF2ZpZyrYNZuAIiXwz3OKZfVW@dpg-cjo3s0r6fquc7389nm70-a.oregon-postgres.render.com/database_0vrz', {
   dialect: 'postgres',
   dialectOptions: {
     ssl: {
@@ -48,10 +48,11 @@ const Form = sequelize.define('Form', {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       primaryKey: true,
+      unique: true,
     },
     userId: {
         type: Sequelize.STRING(36),
-        primaryKey: true,
+        allowNull: false,
       },
     text: {
       type: Sequelize.TEXT,
