@@ -126,9 +126,10 @@ app.get('/GET/Question/:ID', async (req, res) => {
       res.json(data)
 })
 
-app.get("/POST",async(req,res)=>{
+app.post("/POST/RESPONSE",async(req,res)=>{
    //await Form.create({id: 1})
-   await Response.create({formId:1,questionId:1,answer:"Gabriel"})
+   //await Response.create({formId:1,questionId:1,answer:"Gabriel"})
+   await Response.create(req.body)
 
 
 
@@ -137,9 +138,9 @@ app.get("/POST",async(req,res)=>{
 })
 
 
-  app.get('/question', async (req, res) => {
+  app.post('/POST/QUESTION', async (req, res) => {
     try {
-      const data = [
+     /* const data = [
         { text: '¿Cómo te llamas?',
         userId: 'MGP' },
         { text: '¿Cuál es tu edad?',
@@ -147,7 +148,8 @@ app.get("/POST",async(req,res)=>{
         { text: '¿Cuál es tu ciudad natal?',
         userId: 'MGP' },
       ];
-  
+        */
+       var data = req.body
       await Question.bulkCreate(data);
   
       res.json('Preguntas agregadas correctamente :)')
@@ -155,6 +157,10 @@ app.get("/POST",async(req,res)=>{
       res.json('Error al crear preguntas');
     }
   });
+
+
+  app.use('/public', express.static(__dirname + '/public'));
+
 app.listen(port, async () => {
   console.log(`Example app listening on port ${port}`)
   try {
