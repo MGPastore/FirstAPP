@@ -127,12 +127,16 @@ app.get('/GET/Question/:ID', async (req, res) => {
 })
 // SE TIENE QUE ARREGLAR PARA PASARLE EL ID PR PARAMETROS
 app.post("/POST/RESPONSE",async(req,res)=>{
-   //await Form.create({id: 1})
+
+try {
+    //await Form.create({id: 1})
    //await Response.create({formId:1,questionId:1,answer:"Gabriel"})
-   await Response.create(req.body)
+   await Response.bulkCreate(req.body)
+res.json("POST API WORK")
 
-
-
+} catch (error) {
+  res.json(error)
+}
 
 
 })
