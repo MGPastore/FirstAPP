@@ -115,6 +115,15 @@ sequelize.sync()
     console.error('Error al sincronizar tablas:', error);
   });
 
+  app.get('/GET/Response/:ID', async (req, res) => {
+    var data = await Response.findAll({
+      where: {
+        userId: req.params.ID
+      }
+    })
+    console.log(data)
+    res.json(data)
+  })
 
 app.get('/GET/Question/:ID', async (req, res) => {
   var data = await Question.findAll({
