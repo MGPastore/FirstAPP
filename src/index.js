@@ -116,11 +116,11 @@ sequelize.sync()
   });
 
   app.get('/GET/Response/:ID', async (req, res) => {
-    var data = await Response.findAll({
+    let data = await Response.findAll({
       where: {
         formId: req.params.ID
       }
-    })
+    });
     console.log(data)
     res.json(data)
   })
@@ -166,14 +166,15 @@ app.post("/POST/:IDFORM/Response", async (req, res) => {
 
 app.get('/POST/Question', async (req, res) => {
   try {
+    /*
      const data = [
        { text: 'Usuario',
        userId: 'MGPB' },
        { text: 'Contraseña',
        userId: 'MGPB' }
      ];
-      
-    //var data = req.body
+     */ 
+    var data = req.body
     await Question.bulkCreate(data);
 
     res.json(json = "newQuestionOK")
