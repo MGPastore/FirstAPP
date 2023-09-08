@@ -128,7 +128,7 @@ sequelize.sync()
 app.get('/GET/Question/:ID', async (req, res) => {
   var data = await Question.findAll({
     where: {
-      userId: parseInt(req.params.ID)
+      userId: parseInt(req.params.ID,10)
     }
   })
   console.log(data)
