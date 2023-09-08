@@ -118,7 +118,7 @@ sequelize.sync()
   app.get('/GET/Response/:ID', async (req, res) => {
     var data = await Response.findAll({
       where: {
-        userId: req.params.ID
+        formId: req.params.ID
       }
     })
     console.log(data)
@@ -128,7 +128,7 @@ sequelize.sync()
 app.get('/GET/Question/:ID', async (req, res) => {
   var data = await Question.findAll({
     where: {
-      formId: req.params.ID
+      userId: req.params.ID
     }
   })
   console.log(data)
