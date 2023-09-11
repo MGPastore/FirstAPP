@@ -137,7 +137,7 @@ app.post("/POST/:IDFORM/Response", async (req, res) => {
     //await Form.create({id: 1})
     //await Response.create({formId:1,questionId:1,answer:"Gabriel"})
     console.log(req.body)
-    //await Response.bulkCreate(req.body)
+    await Response.bulkCreate(req.body)
     res.json(json = "postDataOK")
 
   } catch (error) {
