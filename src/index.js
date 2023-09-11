@@ -134,19 +134,6 @@ app.get('/GET/Question/:ID', async (req, res) => {
 app.post("/POST/:IDFORM/Response", async (req, res) => {
 
   try {
-    //EL ID TIENE QUE SER CREADO POR UN UUID
-    await Form.create({id: 1})
-    res.json(json = "New FormID")
-
-  } catch (error) {
-    res.json(error)
-  }
-
-
-})
-app.post("/POST/:IDFORM/Response", async (req, res) => {
-
-  try {
     //await Form.create({id: 1})
     //await Response.create({formId:1,questionId:1,answer:"Gabriel"})
     console.log(req.body)
