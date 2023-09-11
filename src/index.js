@@ -116,7 +116,7 @@ sequelize.sync()
   });
 
   app.get('/GET/Response/', async (req, res) => {
-    let data = await Response.findAll({});
+    let data = await Response.findAll();
     console.log(data)
     res.json(data)
   })
