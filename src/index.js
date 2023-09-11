@@ -119,7 +119,7 @@ sequelize.sync()
     let data = await Response.findAll({
     where: {
       formId: req.params.ID
-    });
+    }});
     console.log(data)
     res.json(data)
   })
