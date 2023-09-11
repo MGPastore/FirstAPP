@@ -153,15 +153,37 @@ app.post("/POST/:IDFORM/Response", async (req, res) => {
 
 app.get('/POST/Question', async (req, res) => {
   try {
-    /*
+    
      const data = [
-       { text: 'Usuario',
-       userId: 'MGPB' },
-       { text: 'Contraseña',
-       userId: 'MGPB' }
+       { text: '¿En que horario se encuentra en el LATU? (MAÑANA/TARDE/NOCHE)',
+       userId: 'Diseño' },
+       { text: '¿Estudias o Trabajas?',
+       userId: 'Diseño' },
+       { text: '¿En que edificio haces tus activiades?',
+       userId: 'Diseño' },
+       { text: '¿Cual es el lugar mas comodo del Parque del LATU?',
+       userId: 'Diseño' },
+       { text: '¿Cuanto tiene de descanso? ',
+       userId: 'Diseño' },
+       { text: '¿Que actividades hace en el parque del LATU? ',
+       userId: 'Diseño' },
+       { text: '¿Tiene tiempo libre antes de sus actividades del LATU? ',
+       userId: 'Diseño' },
+       { text: '¿A donde vas en tus descansos en dia de lluvia o frio ? ',
+       userId: 'Diseño' },
+       { text: '¿Tiene algun lugar privado para su descanso ? ',
+       userId: 'Diseño' },
+       { text: '¿Que mobiliario agregarias al parque del LATU? ',
+       userId: 'Diseño' },
+       { text: '¿Compartes el mobiliario urbano con otros miembros del LATU? ',
+       userId: 'Diseño' },
+       { text: '¿Cuantos miembros de su empresa o clase salen al mismo tiempo a descansar? ',
+       userId: 'Diseño' },
+       { text: '¿Que mobiliario crees que hace falta en el parque del LATU? ',
+       userId: 'Diseño' },
      ];
-     */ 
-    var data = req.body
+  
+    //var data = req.body
     await Question.bulkCreate(data);
 
     res.json(json = "newQuestionOK")
